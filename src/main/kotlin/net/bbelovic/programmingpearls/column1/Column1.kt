@@ -10,3 +10,5 @@ fun readLines(path: Path): List<Int> =
                 .toList()
 
 val bitSet = BitSet()
+
+val toBitSet: (BitSet, Int) -> BitSet = { bs, x -> bs.set(x); bs}
