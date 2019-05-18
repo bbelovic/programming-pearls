@@ -48,8 +48,10 @@ fun write(file: String) {
 fun main() {
     val reader = Files.newBufferedReader(Paths.get("abc.txt"))
     val bitSet = BitSet()
-    reader.lines()
+    val result = reader.lineSequence()
             .map { i -> i.toInt() }
-            .reduce()
+            .fold(bitSet, toBitSet)
+
+
 
 }
