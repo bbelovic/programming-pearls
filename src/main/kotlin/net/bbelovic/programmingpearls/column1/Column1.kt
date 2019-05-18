@@ -2,6 +2,7 @@ package net.bbelovic.programmingpearls.column1
 
 import java.io.PrintWriter
 import java.nio.file.Files
+import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.*
 import java.util.stream.Collectors
@@ -51,7 +52,12 @@ fun main() {
     val result = reader.lineSequence()
             .map { i -> i.toInt() }
             .fold(bitSet, toBitSet)
+    val writer = Files.newBufferedWriter(Paths.get("result.txt"))
+    sorted(result).forEach {
+        writer.write(it.toString())
+        writer.newLine()
+    }
 
-
+    writer.close()
 
 }
