@@ -2,7 +2,6 @@ package net.bbelovic.programmingpearls.column1
 
 import java.io.PrintWriter
 import java.nio.file.Files
-import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.*
 import java.util.stream.Collectors
@@ -37,7 +36,7 @@ fun generateRandomNumbers(): LongStream {
 fun write(file: String) {
     try {
         val pw = PrintWriter(file)
-        generateRandomNumbers().forEach { value -> pw.println(value) }
+        generateRandomNumbers().forEach { value -> pw.println(value.toString()) }
         pw.flush()
     } catch (e: Exception) {
         e.printStackTrace()
@@ -47,17 +46,22 @@ fun write(file: String) {
 
 
 fun main() {
-    val reader = Files.newBufferedReader(Paths.get("abc.txt"))
+    val reader = Files.newBufferedReader(Paths.get("abc2.txt"))
     val bitSet = BitSet()
+
+
     val result = reader.lineSequence()
             .map { i -> i.toInt() }
             .fold(bitSet, toBitSet)
-    val writer = Files.newBufferedWriter(Paths.get("result.txt"))
-    sorted(result).forEach {
-        writer.write(it.toString())
-        writer.newLine()
-    }
+    val writer = Files.newBufferedWriter(Paths.get("result3.txt"))
 
-    writer.close()
+
+    writer.use {
+        val sorted = sorted(result)
+        for (x in sorted) {
+            it.write(x.toString())
+            it.newLine()
+        }
+    }
 
 }
