@@ -44,24 +44,23 @@ fun write(file: String) {
 
 }
 
+fun fileAsSequence(filename: String) = Files.newBufferedReader(Paths.get(filename)).lineSequence()
+
+fun foldToBitmap(fileLines: Sequence<String>): BitSet {
+    val bitSet = BitSet()
+    return fileLines.map { line -> line.toInt() }
+            .fold(bitSet) {bs, x -> bs.set(x); bs}
+}
+
+fun writeBitmap(filename: String, bitSet: BitSet) {
+    val writer = Files.newBufferedWriter(Paths.get(filename))
+    writer.use {
+        val wr = it
+        bitSet.stream().forEach { wr.write(it.toString()); wr.newLine()}
+    }
+}
 
 fun main() {
-    val reader = Files.newBufferedReader(Paths.get("abc2.txt"))
-    val bitSet = BitSet()
 
-
-    val result = reader.lineSequence()
-            .map { i -> i.toInt() }
-            .fold(bitSet, toBitSet)
-    val writer = Files.newBufferedWriter(Paths.get("result3.txt"))
-
-
-    writer.use {
-        val sorted = sorted(result)
-        for (x in sorted) {
-            it.write(x.toString())
-            it.newLine()
-        }
-    }
 
 }
