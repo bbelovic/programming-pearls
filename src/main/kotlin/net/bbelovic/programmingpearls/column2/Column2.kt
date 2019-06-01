@@ -1,4 +1,4 @@
-package net.bbelovic.programmingpearls.column1
+package net.bbelovic.programmingpearls.column2
 
 fun rotateLeft(arr: CharArray, moves: Int) {
     for (j in 0 until moves) {
