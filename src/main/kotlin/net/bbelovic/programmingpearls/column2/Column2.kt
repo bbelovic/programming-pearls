@@ -30,6 +30,10 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
 
 }
 
+fun gcd(a: Int, b: Int): Int {
+    return 0
+}
+
 fun main() {
     val arr = charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
     rotateLeft2(arr, 3)
