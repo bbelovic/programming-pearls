@@ -16,6 +16,11 @@ class Column2KtTest {
 
     companion object {
         @JvmStatic
-        private fun gdcTestData() = listOf(Arguments{ arrayOf(8, 3, 1)})
+        private fun gdcTestData() = listOf(
+                Arguments{ arrayOf(8, 3, 1)},
+                Arguments{ arrayOf(3, 8, 1)},
+                Arguments{ arrayOf(48, 18, 6)},
+                Arguments{ arrayOf(9, 4, 1)}
+        )
     }
 }

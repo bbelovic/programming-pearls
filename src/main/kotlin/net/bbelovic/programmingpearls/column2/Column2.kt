@@ -31,7 +31,14 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
 }
 
 fun gcd(a: Int, b: Int): Int {
-    return 1
+    var x = a
+    var y = b
+    while (x % y != 0) {
+        val rem = x % y
+        x = y
+        y = rem
+    }
+    return y
 }
 
 fun main() {
