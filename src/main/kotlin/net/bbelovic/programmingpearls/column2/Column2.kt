@@ -31,7 +31,7 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
 }
 
 fun gcd(a: Int, b: Int): Int {
-    return 0
+    return 1
 }
 
 fun main() {
