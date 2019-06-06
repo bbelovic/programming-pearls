@@ -28,6 +28,7 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
     }
     println("rotated: $rotated")
 
+
 }
 
 fun gcd(a: Int, b: Int): Int {
@@ -44,5 +45,9 @@ fun gcd(a: Int, b: Int): Int {
 fun main() {
     val arr = charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
     rotateLeft2(arr, 3)
-    print(arr)
+    println(arr)
+
+    val s = "abcdefghijklmnoprstuvxyz1234567890"
+    val s2 = "abcdefghijklmnoprstuvxyz1234567890"
+    println(s.length)
 }
