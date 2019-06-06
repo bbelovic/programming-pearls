@@ -43,11 +43,11 @@ fun gcd(a: Int, b: Int): Int {
 }
 
 fun main() {
+    val s = "abcdefghijklmnoprstuvxyz1234567890".toCharArray()
     val arr = charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
-    rotateLeft2(arr, 3)
-    println(arr)
+    rotateLeft2(s, 8)
+    println(s)
 
-    val s = "abcdefghijklmnoprstuvxyz1234567890"
-    val s2 = "abcdefghijklmnoprstuvxyz1234567890"
-    println(s.length)
+    val s2 = "ijklmnoprstuvxyz1234567890abcdefgh"
+//    println(s.length)
 }
