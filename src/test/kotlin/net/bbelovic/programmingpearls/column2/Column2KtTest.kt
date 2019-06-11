@@ -1,6 +1,7 @@
 package net.bbelovic.programmingpearls.column2
 
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -11,7 +12,16 @@ class Column2KtTest {
     @MethodSource("gdcTestData")
     fun testGcd(a: Int, b: Int, expectedGcd: Int) {
         val actualGcd = gcd(a, b)
-        Assertions.assertEquals(expectedGcd, actualGcd)
+        assertEquals(expectedGcd, actualGcd)
+    }
+
+
+    @Test
+    fun testRotateLeft() {
+        val input = "abcdefghijklmnoprstuvxyz1234567890".toCharArray()
+        val actual = rotateLeft2(input, 8)
+        val expected = "ijklmnoprstuvxyz1234567890abcdefgh"
+        assertEquals(expected, input)
     }
 
     companion object {
