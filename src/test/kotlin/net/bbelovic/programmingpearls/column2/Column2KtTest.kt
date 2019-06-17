@@ -21,6 +21,9 @@ class Column2KtTest {
         val input = "abcdefghijklmnoprstuvxyz1234567890".toCharArray()
         rotateLeft2(input, 8)
         val expected = "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray()
+
+        println("expected: ${expected.contentToString()}")
+        println("input: ${input.contentToString()}")
         assertEquals(expected, input)
     }
 
