@@ -19,8 +19,8 @@ class Column2KtTest {
     @Test
     fun testRotateLeft() {
         val input = "abcdefghijklmnoprstuvxyz1234567890".toCharArray()
-        val actual = rotateLeft2(input, 8)
-        val expected = "ijklmnoprstuvxyz1234567890abcdefgh"
+        rotateLeft2(input, 8)
+        val expected = "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray()
         assertEquals(expected, input)
     }
 

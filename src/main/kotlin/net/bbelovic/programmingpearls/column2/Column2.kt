@@ -11,10 +11,11 @@ fun rotateLeft(arr: CharArray, moves: Int) {
 }
 
 fun rotateLeft2(arr: CharArray, moves: Int) {
-    val t = arr[0]
+    var i = 0
+    var t = arr[i]
     var rotated = 0
     var cnt = 0
-    while (true) {
+    while (rotated <= arr.size) {
         val srcIdx = ((cnt+1) * moves) % arr.size
         val destIdx = (cnt * moves) % arr.size
 
@@ -23,7 +24,9 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
         cnt += 1
         if (srcIdx == 0) {
             arr[destIdx] = t
-            break
+            i += 1
+            t = arr[i]
+//            break
         }
     }
     println("rotated: $rotated")
