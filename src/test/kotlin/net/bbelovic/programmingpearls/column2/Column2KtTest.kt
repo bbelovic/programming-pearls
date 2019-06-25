@@ -1,7 +1,6 @@
 package net.bbelovic.programmingpearls.column2
 
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -16,15 +15,11 @@ class Column2KtTest {
     }
 
 
-    @Test
-    fun testRotateLeft() {
-        val input = "abcdefghijklmnoprstuvxyz1234567890".toCharArray()
-        rotateLeft2(input, 8)
-        val expected = "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray()
-
-        println("expected: ${expected.contentToString()}")
-        println("input: ${input.contentToString()}")
-        assertEquals(expected, input)
+    @ParameterizedTest
+    @MethodSource("rotateTestData")
+    fun testRotateLeft(input: CharArray, expected: CharArray, moves: Int) {
+        rotateLeft2(input, moves)
+        assertEquals(expected.contentToString(), input.contentToString())
     }
 
     companion object {
@@ -35,6 +30,15 @@ class Column2KtTest {
                 Arguments{ arrayOf(48, 18, 6)},
                 Arguments{ arrayOf(34, 8, 2)},
                 Arguments{ arrayOf(9, 4, 1)}
+        )
+        @JvmStatic
+        private fun rotateTestData() = listOf(
+                Arguments { arrayOf("abcdefgh".toCharArray(), "defghabc".toCharArray(), 3) }
+
+/*
+                Arguments { arrayOf("abcdefghijklmnoprstuvxyz1234567890".toCharArray(),
+                        "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray()) }
+*/
         )
     }
 }
