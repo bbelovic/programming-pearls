@@ -14,18 +14,27 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
     var i = 0
     var t = arr[i]
     var rotated = 0
-    var cnt = 0
-    while (true) {
-        val srcIdx = ((cnt+1) * moves) % arr.size
-        val destIdx = (cnt * moves) % arr.size
+    var cnt = 1
+    var srcIdx = (cnt * moves) % arr.size
+    var destIdx = i % arr.size
 
+    while (true) {
         arr[destIdx] = arr[srcIdx]
         ++rotated
         cnt += 1
+        destIdx = srcIdx
+        srcIdx = (cnt * moves ) % arr.size
         if (srcIdx == 0) {
             arr[destIdx] = t
             i += 1
             t = arr[i]
+//            break
+            destIdx = i % arr.size
+            cnt = 1
+            srcIdx = (cnt * moves) % arr.size
+            rotated += 1
+        }
+        if (rotated == arr.size) {
             break
         }
     }
