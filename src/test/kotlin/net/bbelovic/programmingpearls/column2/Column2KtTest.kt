@@ -33,10 +33,9 @@ class Column2KtTest {
         )
         @JvmStatic
         private fun rotateTestData() = listOf(
-                Arguments { arrayOf("abcdefgh".toCharArray(), "defghabc".toCharArray(), 3) }
-
-                /*Arguments { arrayOf("abcdefghijklmnoprstuvxyz1234567890".toCharArray(),
-                        "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray(), 8) }*/
+//                Arguments { arrayOf("abcdefgh".toCharArray(), "defghabc".toCharArray(), 3) },
+                Arguments { arrayOf("abcdefghijklmnoprstuvxyz1234567890".toCharArray(),
+                        "ijklmnoprstuvxyz1234567890abcdefgh".toCharArray(), 8) }
         )
     }
 }
