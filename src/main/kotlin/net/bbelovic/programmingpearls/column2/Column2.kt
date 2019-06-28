@@ -43,9 +43,9 @@ fun rotateLeft2(arr: CharArray, moves: Int) {
 fun rotateLeft3(arr: CharArray, moves: Int) {
     for (i in 0 until gcd(arr.size, moves)) {
         var dest = i
-        var src = moves + dest
         val c = arr[dest]
         while (true) {
+            val src = moves + dest
             if (src % arr.size == i) {
                 arr[dest % arr.size] = c
                 break
@@ -53,7 +53,6 @@ fun rotateLeft3(arr: CharArray, moves: Int) {
                 arr[dest % arr.size] = arr[src % arr.size]
             }
             dest = src
-            src += (dest + i )
         }
     }
 }
