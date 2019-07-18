@@ -8,15 +8,17 @@ import org.openjdk.jmh.annotations.*
 @BenchmarkMode(value = [Mode.Throughput])
 open class Column2Benchmark {
     @Benchmark
-    fun benchmarkColumn2_rotateLeft1() {
+    fun benchmarkColumn2_rotateLeft1(): Int {
         val input = "abcdefgh".toCharArray()
         rotateLeft(input, 3)
+        return 1
     }
 
     @Benchmark
-    fun benchmarkColumn2_rotateLeft4() {
+    fun benchmarkColumn2_rotateLeft4(): Int {
         val input = "abcdefgh".toCharArray()
         rotateLeft4(input, 3)
+        return 1
 
     }
 }
