@@ -17,6 +17,7 @@ class Column4KtTest {
         @JvmStatic
         private fun testData() = listOf(
                 Arguments { arrayOf(Array(10) {x -> x+1}, 8,  7)},
+                Arguments { arrayOf(Array(10000) {x -> x+1}, 8999,  8998)},
                 Arguments { arrayOf(Array(2) {x -> x+1}, 2, 1)},
                 Arguments { arrayOf(Array(1) {x -> x+1}, 1, 0)},
                 Arguments { arrayOf(Array(0) {x -> x+1}, 8, -1)}
