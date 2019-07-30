@@ -6,6 +6,8 @@ import org.openjdk.jmh.annotations.*
 
 @State(value = Scope.Thread)
 @BenchmarkMode(value = [Mode.AverageTime])
+@Warmup(iterations = 5)
+@Fork(value = 2)
 open class Column2Benchmark {
     @Benchmark
     fun benchmarkColumn2_rotateLeft1() {

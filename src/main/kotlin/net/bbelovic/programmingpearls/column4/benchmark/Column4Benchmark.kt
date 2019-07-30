@@ -7,6 +7,8 @@ import java.util.*
 
 @State(Scope.Thread)
 @BenchmarkMode(value = [AverageTime])
+@Warmup(iterations = 5)
+@Fork(value = 3)
 open class Column4Benchmark {
     private lateinit var arr: Array<Int>
     @Benchmark
