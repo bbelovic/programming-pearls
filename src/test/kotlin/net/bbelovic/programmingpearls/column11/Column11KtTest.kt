@@ -9,6 +9,7 @@ internal class Column11KtTest {
         val input = arrayOf(7, 2, 1, 9, 5, 3, 0)
         partition(input)
         val expected = arrayOf(0, 2, 1, 5, 3, 7, 9)
+        println(input.contentToString())
         Assertions.assertArrayEquals(expected, input)
     }
 }

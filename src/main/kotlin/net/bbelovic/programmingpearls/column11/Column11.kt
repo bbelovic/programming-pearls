@@ -16,6 +16,6 @@ fun partition(input: Array<Int>) {
 
 private fun swap(input: Array<Int>, first: Int, second: Int) {
     val pom = input[first]
-    input[second] = input[first]
-    input[first] = pom
+    input[first] = input[second]
+    input[second] = pom
 }
