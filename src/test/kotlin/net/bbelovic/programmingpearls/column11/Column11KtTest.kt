@@ -3,15 +3,25 @@ package net.bbelovic.programmingpearls.column11
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 
 internal class Column11KtTest {
-    @Test
-    fun testPartition() {
-        val input = arrayOf(7, 2, 1, 9, 5, 3, 0)
-        val actualM = partition(input, 0, input.size - 1)
+    @ParameterizedTest
+    @MethodSource("testData")
+    fun testPartition(input: Array<Int>, l: Int, u: Int, expectedM: Int) {
+        val actualM = partition(input, l, u)
         val expectedArray = arrayOf(0, 2, 1, 5, 3, 7, 9)
-        assertEquals(5, actualM)
+        assertEquals(expectedM, actualM)
         assertArrayEquals(expectedArray, input)
+    }
+
+    companion object {
+        @JvmStatic
+        fun testData() = listOf(
+                Arguments { arrayOf(arrayOf(7, 2, 1, 9, 5, 3, 0), 0, 6, 5) }
+        )
     }
 
     @Test
