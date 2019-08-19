@@ -1,6 +1,12 @@
 package net.bbelovic.programmingpearls.column11
 
-fun partition(input: Array<Int>) {
+fun qsort1(input: Array<Int>, l: Int, u: Int) {
+    val m = partition(input)
+    qsort1(input, 0, m - 1)
+    qsort1(input, m + 1, m - 1)
+}
+
+fun partition(input: Array<Int>): Int {
     var m = 0
     val a = 1
     val t = input[0]
@@ -11,7 +17,7 @@ fun partition(input: Array<Int>) {
         }
     }
     swap(input, 0, m)
-
+    return m
 }
 
 private fun swap(input: Array<Int>, first: Int, second: Int) {
