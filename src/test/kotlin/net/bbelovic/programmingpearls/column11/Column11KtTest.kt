@@ -8,7 +8,7 @@ internal class Column11KtTest {
     @Test
     fun testPartition() {
         val input = arrayOf(7, 2, 1, 9, 5, 3, 0)
-        val actualM = partition(input)
+        val actualM = partition(input, 0, input.size - 1)
         val expectedArray = arrayOf(0, 2, 1, 5, 3, 7, 9)
         assertEquals(5, actualM)
         assertArrayEquals(expectedArray, input)
