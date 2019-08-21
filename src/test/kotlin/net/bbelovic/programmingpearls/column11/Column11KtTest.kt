@@ -2,7 +2,6 @@ package net.bbelovic.programmingpearls.column11
 
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -26,7 +25,11 @@ internal class Column11KtTest {
 
         @JvmStatic
         private fun testDataQSort() = listOf(
-                Arguments { arrayOf(arrayOf(7, 2, 1, 9, 5, 3, 0), arrayOf(0, 1, 2, 3, 5, 7, 9)) }
+                Arguments { arrayOf(arrayOf(7, 2, 1, 9, 5, 3, 0), arrayOf(0, 1, 2, 3, 5, 7, 9)) },
+                Arguments { arrayOf(arrayOf(7, 7, 7, 7, 7, 7, 7), arrayOf(7, 7, 7, 7, 7, 7, 7)) },
+                Arguments { arrayOf(arrayOf(7, 2), arrayOf(2, 7)) },
+                Arguments { arrayOf(arrayOf(1), arrayOf(1)) },
+                Arguments { arrayOf(emptyArray(), emptyArray<Int>()) }
         )
     }
 
