@@ -17,7 +17,7 @@ fun partition(input: Array<Int>, l: Int, u: Int): Int {
             swap(input , ++m, x)
         }
     }
-    swap(input, 0, m)
+    swap(input, l, m)
     return m
 }
 
