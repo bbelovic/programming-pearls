@@ -2,9 +2,11 @@ package net.bbelovic.programmingpearls.column11
 
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
+import kotlin.random.Random
 
 internal class Column11KtTest {
     @ParameterizedTest
@@ -40,4 +42,10 @@ internal class Column11KtTest {
         assertArrayEquals(expected, input)
     }
 
+    @Test
+    fun testLargeInput() {
+        val input = Array(1_000_000) { i -> Random.nextInt(0, 10_000_000)}
+        qsort1(input, 0, input.size - 1)
+
+    }
 }
